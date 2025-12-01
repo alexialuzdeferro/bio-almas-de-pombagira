@@ -36,6 +36,7 @@
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'pulse-fast': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 8s linear infinite',
                     }
                 }
             }
@@ -132,6 +133,19 @@
             70% { box-shadow: 0 0 0 10px rgba(253, 224, 71, 0); }
             100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0); }
         }
+
+        /* Estilo dos Orbes (Trindade) */
+        .orb-btn {
+            background: radial-gradient(circle at 30% 30%, #dc2626, #450a0a);
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.6), inset 0 0 10px rgba(255, 215, 0, 0.3);
+            border: 2px solid #d4af37;
+            transition: all 0.4s ease;
+        }
+        .orb-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 25px rgba(253, 224, 71, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.6);
+            border-color: #fde047;
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen font-sans" data-theme="pombagira">
@@ -148,11 +162,11 @@
         </div>
 
         <!-- Header -->
-        <div class="text-center mb-8 w-full relative z-10">
+        <div class="text-center mb-6 w-full relative z-10">
             <div class="relative inline-block mb-4">
                 <div class="absolute -inset-1 bg-gradient-to-tr from-[var(--text-accent)] to-[var(--text-main)] rounded-full blur opacity-75 animate-pulse"></div>
                 
-                <!-- ÁREA DA FOTO DE PERFIL CORRIGIDA -->
+                <!-- ÁREA DA FOTO DE PERFIL -->
                 <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[var(--card-bg)] shadow-2xl bg-black/40">
                     <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2).jpeg" 
                          alt="Alexia Luz de Ferro" 
@@ -170,16 +184,55 @@
             <h1 class="font-serif text-4xl font-bold mb-2 text-[var(--text-main)] tracking-wide drop-shadow-md">
                 Almas de Pombagira
             </h1>
-            <p class="text-[var(--text-accent)] text-lg font-latin font-bold tracking-widest uppercase mb-4 opacity-90 drop-shadow-sm">
+            <p class="text-[var(--text-accent)] text-lg font-latin font-bold tracking-widest uppercase mb-2 opacity-90 drop-shadow-sm">
                 Lux in Tenebris • Vis Aeterna
             </p>
             <div class="h-1 w-24 mx-auto bg-gradient-to-r from-transparent via-[var(--text-accent)] to-transparent rounded opacity-70"></div>
         </div>
 
+        <!-- A TRINDADE: OBRAS PRIMAS (DESTAQUE MÁXIMO) -->
+        <!-- Estes são os 3 círculos pulsantes que pediste -->
+        <div class="grid grid-cols-3 gap-4 mb-8 w-full max-w-sm relative z-20 px-2">
+            
+            <!-- 1. Pontos Cantados -->
+            <a href="https://alexialuzdeferro.github.io/PONTOS-CANTADOS/" target="_blank" class="flex flex-col items-center group">
+                <div class="w-20 h-20 rounded-full orb-btn flex items-center justify-center animate-pulse-slow mb-2 relative">
+                    <!-- Ícone Nota Musical/Atabaque -->
+                    <svg class="w-10 h-10 text-yellow-300 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                    <!-- Brilho extra -->
+                    <div class="absolute inset-0 rounded-full border border-white/30 animate-ping opacity-20"></div>
+                </div>
+                <span class="text-[var(--text-main)] font-latin font-bold text-xs uppercase tracking-wider text-center group-hover:text-[var(--text-accent)] transition">Pontos<br>Cantados</span>
+            </a>
+
+            <!-- 2. Grimório (Destaque Central) -->
+            <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="flex flex-col items-center group -mt-4">
+                <div class="w-24 h-24 rounded-full orb-btn flex items-center justify-center animate-pulse relative z-10 mb-2">
+                    <!-- Ícone Livro -->
+                    <svg class="w-12 h-12 text-yellow-300 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <!-- Halo Dourado -->
+                    <div class="absolute inset-0 rounded-full shadow-[0_0_30px_rgba(212,175,55,0.6)]"></div>
+                </div>
+                <span class="text-[var(--text-accent)] font-latin font-bold text-sm uppercase tracking-widest text-center group-hover:text-yellow-400 transition text-shadow">Grimório<br>Sagrado</span>
+            </a>
+
+            <!-- 3. Site Pombagiras -->
+            <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="flex flex-col items-center group">
+                <div class="w-20 h-20 rounded-full orb-btn flex items-center justify-center animate-pulse-slow mb-2 relative">
+                    <!-- Ícone Coroa/Rosa -->
+                    <svg class="w-10 h-10 text-yellow-300 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11z"/><path d="M12 22c4.97 0 9-4.03 9-9h-2c0 3.87-3.13 7-7 7s-7-3.13-7-7H3c0 4.97 4.03 9 9 9z"/></svg>
+                     <!-- Brilho extra -->
+                     <div class="absolute inset-0 rounded-full border border-white/30 animate-ping opacity-20"></div>
+                </div>
+                <span class="text-[var(--text-main)] font-latin font-bold text-xs uppercase tracking-wider text-center group-hover:text-[var(--text-accent)] transition">O Portal<br>Real</span>
+            </a>
+
+        </div>
+
         <!-- Links Container -->
         <div class="w-full space-y-4 relative z-10">
 
-            <!-- 0. QUIZZ EM DESTAQUE (NOVO) -->
+            <!-- 0. QUIZZ EM DESTAQUE -->
             <a href="https://alexialuzdeferro.github.io/Quizz--Pombagiras-/" target="_blank" class="block rounded-xl overflow-hidden transform hover:-translate-y-1 transition-all duration-300 quiz-btn group relative">
                 <div class="absolute inset-0 bg-yellow-500/10 animate-pulse-fast"></div>
                 <div class="px-6 py-5 flex items-center justify-between relative z-10">
