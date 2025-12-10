@@ -6,10 +6,8 @@
     <title>Almas de Pombagira | Alexia Melusine</title>
     <meta name="description" content="Portal oficial Almas de Pombagira. Alexia Melusine - Rosa de Fogo.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
@@ -391,11 +389,44 @@
             position: relative;
             z-index: 10;
         }
+        
+        /* NOVO ESTILO DO CONTADOR - Mantendo transparência e posição */
+        #visit-counter {
+            /* Mantém a posição fixed */
+            position: fixed;
+            bottom: 8px; /* bottom-2 */
+            right: 8px;  /* right-2 */
+            
+            /* Mantém a estética */
+            color: #d4af37; /* text-amber-500/60 */
+            opacity: 0.6;
+            font-size: 10px;
+            font-family: 'monospace'; /* font-mono */
+            z-index: 50;
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.5); /* bg-black/50 */
+            padding: 2px 8px; /* px-2 py-1 */
+            border-radius: 4px; /* rounded */
+            
+            /* Adiciona um pequeno efeito visual (opcional) */
+            box-shadow: 0 0 5px rgba(220, 38, 38, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        /* Animação de pulso para o número do contador */
+        #counter-value {
+            animation: pulseCounter 2s infinite;
+        }
+        
+        @keyframes pulseCounter {
+            0%, 100% { opacity: 1; text-shadow: 0 0 5px rgba(253, 224, 71, 0.5); }
+            50% { opacity: 0.8; text-shadow: none; }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Efeitos de Fundo Místico -->
     <div class="life-pulse"></div>
     
     <div class="magic-circles">
@@ -411,19 +442,16 @@
 
     <main class="max-w-lg mx-auto min-h-screen flex flex-col items-center px-4 py-8 md:py-12 pb-24">
         
-        <!-- Header com Foto de Perfil -->
         <header class="text-center mb-8 w-full">
-            <!-- Foto de Perfil -->
             <div class="relative inline-block mb-6">
                 <div class="profile-glow">
                     <div class="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-amber-900/50 shadow-2xl bg-black/40">
                         <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2).jpeg" 
-                             alt="Alexia Luz de Ferro" 
-                             class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                               alt="Alexia Luz de Ferro" 
+                               class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                     </div>
                 </div>
 
-                <!-- Tridente Ícone -->
                 <div class="absolute -bottom-2 -right-2 bg-gradient-to-br from-red-950 to-black p-3 rounded-full border-2 border-amber-600 shadow-lg shadow-red-900/50">
                     <svg width="28" height="28" viewBox="0 0 100 100" fill="#d4af37">
                         <path d="M50 10 C 48 10 46 12 46 14 L 46 65 C 30 55 20 40 20 25 C 20 20 15 20 15 25 C 15 50 35 70 46 75 L 46 90 C 46 95 54 95 54 90 L 54 75 C 65 70 85 50 85 25 C 85 20 80 20 80 25 C 80 40 70 55 54 65 L 54 14 C 54 12 52 10 50 10 Z M 35 25 L 35 35 L 65 35 L 65 25 M 50 10 L 50 35" stroke="#d4af37" stroke-width="2" />
@@ -431,17 +459,14 @@
                 </div>
             </div>
 
-            <!-- Título Principal -->
             <h1 class="font-cinzel text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-amber-100 glow-text tracking-widest">
                 Almas de Pombagira
             </h1>
             
-            <!-- Subtítulo em Latim -->
             <p class="font-cinzel text-xs md:text-sm tracking-[0.25em] uppercase mb-4 text-amber-500/80 gold-glow">
                 Lux in Tenebris • Vis Aeterna
             </p>
 
-            <!-- Linha Decorativa -->
             <div class="flex items-center justify-center gap-4">
                 <span class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent via-red-600 to-transparent"></span>
                 <span class="text-xl md:text-2xl animate-pulse-slow">🌹</span>
@@ -449,10 +474,7 @@
             </div>
         </header>
 
-        <!-- OS QUATRO PORTAIS: Obras Principais -->
         <section class="grid grid-cols-4 gap-2 md:gap-3 mb-10 w-full max-w-md px-2">
-            
-            <!-- 1. Pontos Cantados -->
             <a href="https://alexialuzdeferro.github.io/PONTOS-CANTADOS/" target="_blank" class="flex flex-col items-center group">
                 <div class="w-14 h-14 md:w-18 md:h-18 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0s;">
                     <svg class="w-7 h-7 md:w-9 md:h-9 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -464,7 +486,6 @@
                 </span>
             </a>
 
-            <!-- 2. Grimório -->
             <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.3s;">
                     <svg class="w-8 h-8 md:w-10 md:h-10 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -476,7 +497,6 @@
                 </span>
             </a>
 
-            <!-- 3. Portal Real -->
             <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.6s;">
                     <svg class="w-8 h-8 md:w-10 md:h-10 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -489,7 +509,6 @@
                 </span>
             </a>
 
-            <!-- 4. Cartão de Visitas -->
             <a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank" class="flex flex-col items-center group">
                 <div class="w-14 h-14 md:w-18 md:h-18 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.9s;">
                     <svg class="w-7 h-7 md:w-9 md:h-9 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -502,10 +521,7 @@
             </a>
         </section>
 
-        <!-- Links Container -->
         <div class="w-full space-y-4">
-
-            <!-- QUIZ EM DESTAQUE -->
             <a href="https://alexialuzdeferro.github.io/pombagira-revelada/" target="_blank" class="block rounded-xl overflow-hidden transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 quiz-btn link-card group">
                 <div class="px-5 py-4 md:px-6 md:py-5 flex items-center justify-between relative z-10">
                     <div class="flex flex-col">
@@ -520,7 +536,6 @@
                 </div>
             </a>
 
-            <!-- AS POMBAGIRAS -->
             <div class="glass-panel rounded-xl overflow-hidden link-card">
                 <button onclick="toggleAccordion('pombagiras')" class="w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
                     <span class="flex items-center gap-3">
@@ -694,14 +709,12 @@
                 </div>
             </div>
 
-            <!-- SEPARATOR -->
             <div class="flex items-center justify-center gap-4 py-3 opacity-60">
                 <span class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent to-red-600"></span>
                 <span class="font-cinzel text-xs uppercase tracking-[0.2em] text-amber-400">Onde Encontrar</span>
                 <span class="h-px w-12 md:w-16 bg-gradient-to-l from-transparent to-red-600"></span>
             </div>
 
-            <!-- Bio Site -->
             <a href="https://bio.site/AlmasdePombagira" target="_blank" class="block glass-panel rounded-xl overflow-hidden link-card hover:scale-[1.02] transition-transform">
                 <div class="flex items-center h-16 md:h-20">
                     <div class="w-16 md:w-20 h-full bg-gradient-to-br from-red-950 to-purple-950 flex items-center justify-center flex-shrink-0">
@@ -715,7 +728,6 @@
                 </div>
             </a>
 
-            <!-- Linktree -->
             <a href="https://linktr.ee/alexiarosadefogo" target="_blank" class="block glass-panel rounded-xl overflow-hidden link-card hover:scale-[1.02] transition-transform">
                 <div class="flex items-center h-16 md:h-20">
                     <div class="w-16 md:w-20 h-full bg-gradient-to-br from-green-950 to-emerald-950 flex items-center justify-center flex-shrink-0">
@@ -729,7 +741,6 @@
                 </div>
             </a>
 
-            <!-- Canva Site -->
             <a href="https://pombagiras.my.canva.site/" target="_blank" class="block glass-panel rounded-xl overflow-hidden link-card hover:scale-[1.02] transition-transform">
                 <div class="flex items-center h-16 md:h-20">
                     <div class="w-16 md:w-20 h-full bg-gradient-to-br from-blue-950 to-indigo-950 flex items-center justify-center flex-shrink-0">
@@ -743,7 +754,6 @@
                 </div>
             </a>
 
-            <!-- Comunidade -->
             <div class="glass-panel rounded-xl p-4">
                 <p class="text-center text-amber-100 text-sm font-cinzel font-bold mb-3 uppercase tracking-wider">Acessar Canais Agora</p>
                 <div class="grid grid-cols-3 gap-3">
@@ -768,7 +778,6 @@
                 </div>
             </div>
 
-            <!-- YouTube -->
             <a href="https://www.youtube.com/@almasdepombagira" target="_blank" class="block glass-panel rounded-xl overflow-hidden transform hover:-translate-y-1 transition-all duration-300 link-card border-red-700/50 hover:border-red-500">
                 <div class="px-5 py-4 md:px-6 md:py-5 flex items-center justify-between">
                     <span class="flex items-center gap-3 md:gap-4">
@@ -783,7 +792,6 @@
                 </div>
             </a>
 
-            <!-- Redes Sociais Grid -->
             <div class="grid grid-cols-2 gap-3">
                 <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card">
                     <div class="text-xl md:text-2xl text-pink-500">📷</div>
@@ -803,7 +811,6 @@
                 </a>
             </div>
 
-            <!-- Mídia Extra -->
             <div class="grid grid-cols-3 gap-2">
                 <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center">
                     <span class="text-xl md:text-2xl text-orange-500">🟧</span>
@@ -819,7 +826,6 @@
                 </a>
             </div>
 
-            <!-- TikTok Espelhos -->
             <a href="https://www.tiktok.com/@espelhosdepombagira" target="_blank" class="block glass-panel rounded-xl border border-amber-600/50 p-4 link-card bg-gradient-to-r from-black/50 to-red-950/30 hover:border-amber-500 transition">
                 <div class="flex items-center justify-center gap-2">
                     <span class="text-xl md:text-2xl animate-pulse">✨</span>
@@ -829,7 +835,6 @@
 
         </div>
 
-        <!-- Footer -->
         <footer class="mt-12 md:mt-16 text-center">
             <div class="flex justify-center items-center gap-4 mb-4">
                 <span class="h-px w-8 bg-red-600/50"></span>
@@ -847,14 +852,91 @@
             </p>
         </footer>
 
-        <!-- Contador -->
-        <div id="visit-counter" class="fixed bottom-2 right-2 text-amber-500/60 text-[10px] font-mono z-50 pointer-events-none bg-black/50 px-2 py-1 rounded">
+        <div id="visit-counter">
             Acessos: <span id="counter-value">...</span>
         </div>
 
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script>
+        // ===========================================
+        // CONFIGURAÇÃO SUPABASE
+        // ===========================================
+        const SUPABASE_URL = 'https://qvbjwzszdijhydgcqvyu.supabase.co';
+        const SUPABASE_ANON_KEY = 'dUeb2l0Tmk79e23194EL9Cn3MISPDQ9wpxQ0JAmNLo183U9Z2cK8Jh66v8rTedPhqbZJjezKULh1sUblUMuMjA==';
+
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // SLUG ÚNICO PARA ESTA PÁGINA: "pombagira-page"
+        const PAGE_SLUG = 'pombagira-page'; 
+        const TABLE_NAME = 'views'; // Nome da sua tabela de contagem
+
+        /**
+         * Busca o contador atual e o incrementa em 1.
+         * Insere um novo registro se o slug não existir.
+         */
+        async function getAndIncrementViews() {
+            try {
+                // 1. Tenta buscar o registro para o SLUG atual
+                let { data: current, error: fetchError } = await supabase
+                    .from(TABLE_NAME)
+                    .select('count')
+                    .eq('slug', PAGE_SLUG)
+                    .single();
+                
+                let newCount;
+                
+                if (fetchError && fetchError.code === 'PGRST116') {
+                    // 2a. SLUG não encontrado (primeiro acesso), INSIRA o registro
+                    newCount = 1;
+                    const { error: insertError } = await supabase
+                        .from(TABLE_NAME)
+                        .insert([
+                            { slug: PAGE_SLUG, count: newCount }
+                        ]);
+
+                    if (insertError) {
+                        console.error('Erro ao inserir novo contador:', insertError);
+                        // Tenta mostrar 1 ou uma mensagem de erro se a inserção falhar
+                        document.getElementById('counter-value').textContent = 'Error';
+                        return;
+                    }
+
+                } else if (current) {
+                    // 2b. SLUG encontrado, ATUALIZA o contador
+                    newCount = current.count + 1;
+                    const { error: updateError } = await supabase
+                        .from(TABLE_NAME)
+                        .update({ count: newCount })
+                        .eq('slug', PAGE_SLUG);
+                    
+                    if (updateError) {
+                        console.error('Erro ao atualizar contador:', updateError);
+                        newCount = current.count; // Mostra o valor antigo em caso de erro na atualização
+                    }
+                    
+                } else if (fetchError) {
+                    // Trata outros erros de busca
+                    console.error('Erro geral na busca do contador:', fetchError);
+                    document.getElementById('counter-value').textContent = 'Error';
+                    return;
+                }
+
+                // 3. Atualiza o display no HTML com formatação PT-BR
+                document.getElementById('counter-value').textContent = newCount.toLocaleString('pt-BR');
+
+            } catch (e) {
+                console.error('Erro de rede ou Supabase:', e);
+                document.getElementById('counter-value').textContent = 'Offline';
+            }
+        }
+
+        // ===========================================
+        // FUNÇÕES EXISTENTES
+        // ===========================================
+        
         // Criar Rosas Flutuantes
         function createRoses() {
             const container = document.getElementById('roses');
@@ -937,24 +1019,14 @@
             });
         });
 
-        // Contador de Acessos
+        // Chamada de Inicialização
         document.addEventListener('DOMContentLoaded', () => {
             createRoses();
             createPetals();
             createSparks();
-
-            const baseVisits = 15420;
-            let userVisits = localStorage.getItem('user_visits');
             
-            if (!userVisits) {
-                userVisits = 1;
-            } else {
-                userVisits = parseInt(userVisits) + 1;
-            }
-
-            localStorage.setItem('user_visits', userVisits);
-            const totalDisplay = baseVisits + userVisits;
-            document.getElementById('counter-value').innerText = totalDisplay.toLocaleString('pt-BR');
+            // CHAMA A FUNÇÃO REAL DO SUPABASE
+            getAndIncrementViews();
         });
     </script>
 </body>
