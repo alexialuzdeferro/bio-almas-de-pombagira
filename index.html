@@ -144,6 +144,15 @@
             animation: rotateCircle 20s linear infinite;
         }
 
+        .magic-circle:nth-child(4) {
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+            border-color: #ff69b4;
+            animation: rotateCircle 15s linear infinite reverse;
+        }
+
         @keyframes rotateCircle {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -393,6 +402,7 @@
         <div class="magic-circle"></div>
         <div class="magic-circle"></div>
         <div class="magic-circle"></div>
+        <div class="magic-circle"></div>
     </div>
 
     <div class="floating-roses" id="roses"></div>
@@ -439,43 +449,55 @@
             </div>
         </header>
 
-        <!-- A TRINDADE: Obras Principais -->
-        <section class="grid grid-cols-3 gap-3 md:gap-4 mb-10 w-full max-w-sm px-2">
+        <!-- OS QUATRO PORTAIS: Obras Principais -->
+        <section class="grid grid-cols-4 gap-2 md:gap-3 mb-10 w-full max-w-md px-2">
             
             <!-- 1. Pontos Cantados -->
             <a href="https://alexialuzdeferro.github.io/PONTOS-CANTADOS/" target="_blank" class="flex flex-col items-center group">
-                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0s;">
-                    <svg class="w-8 h-8 md:w-10 md:h-10 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                <div class="w-14 h-14 md:w-18 md:h-18 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0s;">
+                    <svg class="w-7 h-7 md:w-9 md:h-9 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
+                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
                     Pontos<br>Cantados
                 </span>
             </a>
 
-            <!-- 2. Grimório (Destaque Central) -->
-            <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="flex flex-col items-center group -mt-3 md:-mt-4">
-                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.5s;">
-                    <svg class="w-10 h-10 md:w-12 md:h-12 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
+            <!-- 2. Grimório -->
+            <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.3s;">
+                    <svg class="w-8 h-8 md:w-10 md:h-10 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-xs md:text-sm uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">
+                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">
                     Grimório<br>Sagrado
                 </span>
             </a>
 
             <!-- 3. Portal Real -->
-            <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="flex flex-col items-center group">
-                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 1s;">
+            <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.6s;">
                     <svg class="w-8 h-8 md:w-10 md:h-10 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2l-5.5 9h11z"/>
                         <path d="M12 22c4.97 0 9-4.03 9-9h-2c0 3.87-3.13 7-7 7s-7-3.13-7-7H3c0 4.97 4.03 9 9 9z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
+                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">
                     O Portal<br>Real
+                </span>
+            </a>
+
+            <!-- 4. Cartão de Visitas -->
+            <a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank" class="flex flex-col items-center group">
+                <div class="w-14 h-14 md:w-18 md:h-18 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.9s;">
+                    <svg class="w-7 h-7 md:w-9 md:h-9 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM4 0h16v2H4zm0 22h16v2H4zm8-10a2.5 2.5 0 000-5 2.5 2.5 0 000 5zm0 1c-1.83 0-5.5.92-5.5 2.75V17h11v-1.25c0-1.83-3.67-2.75-5.5-2.75z"/>
+                    </svg>
+                </div>
+                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
+                    Cartão<br>de Visitas
                 </span>
             </a>
         </section>
@@ -497,43 +519,6 @@
                     <span class="text-2xl md:text-3xl animate-bounce">🔮</span>
                 </div>
             </a>
-
-            <!-- QUEM SOU -->
-            <div class="glass-panel rounded-xl overflow-hidden link-card">
-                <button onclick="toggleAccordion('about')" class="w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
-                    <span class="flex items-center gap-3">
-                        <span class="text-xl md:text-2xl">⚡</span>
-                        <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg">Quem Sou</span>
-                    </span>
-                    <svg id="arrow-about" class="w-5 h-5 text-red-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div id="content-about" class="accordion-content bg-black/30">
-                    <div class="px-5 py-5 text-center border-t border-red-900/30">
-                        <p class="font-cinzel font-bold text-lg md:text-xl mb-2 text-amber-200">Alexia Melusine</p>
-                        <p class="font-garamond text-base md:text-lg mb-4 text-amber-100/70 italic">
-                            Pessoa não binária com forte relação com as Pombagiras.
-                        </p>
-                        
-                        <div class="relative py-4 px-3 mb-4 bg-gradient-to-r from-red-950/50 via-purple-950/30 to-red-950/50 rounded-lg border border-red-900/30">
-                            <p class="font-garamond text-base md:text-lg italic text-red-300">
-                                "Dançando entre as constelações e os véus do mistério. Sou a balança que oscila entre o visível e o oculto, fluindo como as marés da lua."
-                            </p>
-                        </div>
-                        
-                        <div class="space-y-1 mb-4 font-cinzel text-sm uppercase tracking-widest">
-                            <p class="text-amber-200">Alexia Rosa de Fogo</p>
-                            <p class="text-red-500">✦</p>
-                            <p class="text-amber-200">Alexia Luz de Ferro</p>
-                        </div>
-
-                        <p class="font-garamond text-lg md:text-xl italic text-red-400 border-t border-red-900/30 pt-4 gold-glow">
-                            "Quem deve paga, quem merece recebe."
-                        </p>
-                    </div>
-                </div>
-            </div>
 
             <!-- AS POMBAGIRAS -->
             <div class="glass-panel rounded-xl overflow-hidden link-card">
