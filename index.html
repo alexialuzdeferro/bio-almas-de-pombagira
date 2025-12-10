@@ -829,11 +829,6 @@
 
         </div>
 
-        <!-- Contador de Acessos -->
-        <div id="visit-counter" class="fixed bottom-2 right-2 text-amber-500/60 text-[10px] font-mono z-50 pointer-events-none bg-black/50 px-2 py-1 rounded">
-            Acessos: <span id="counter-value">...</span>
-        </div>
-
         <!-- Footer -->
         <footer class="mt-12 md:mt-16 text-center">
             <div class="flex justify-center items-center gap-4 mb-4">
@@ -851,6 +846,11 @@
                 Mojubá às Guardiãs
             </p>
         </footer>
+
+        <!-- Contador -->
+        <div id="visit-counter" class="fixed bottom-2 right-2 text-amber-500/60 text-[10px] font-mono z-50 pointer-events-none bg-black/50 px-2 py-1 rounded">
+            Acessos: <span id="counter-value">...</span>
+        </div>
 
     </main>
 
@@ -937,66 +937,24 @@
             });
         });
 
-        // Supabase Config
-        const SUPABASE_URL = 'https://qvbjwzszdijhydgcqvyu.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2Ymp3enN6ZGlqaHlkZ2Nxdnl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgyMDY2MTcsImV4cCI6MjA2Mzc4MjYxN30.dUeb2l0Tmk79e23194EL9Cn3MISPDQ9wpxQ0JAmNLo183U9Z2cK8Jh66v8rTedPhqbZJjezKULh1sUblUMuMjA';
-
-        // Função para buscar e incrementar contador
-        async function updateVisitCounter() {
-            const counterEl = document.getElementById('counter-value');
-            const pageId = 'almas-pombagira-main';
-            
-            try {
-                // Verificar se já contou esta sessão
-                const sessionCounted = sessionStorage.getItem('visit_counted');
-                
-                if (!sessionCounted) {
-                    // Incrementar contador
-                    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_visits`, {
-                        method: 'POST',
-                        headers: {
-                            'apikey': SUPABASE_KEY,
-                            'Authorization': `Bearer ${SUPABASE_KEY}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ page_id: pageId })
-                    });
-                    
-                    if (response.ok) {
-                        sessionStorage.setItem('visit_counted', 'true');
-                    }
-                }
-                
-                // Buscar contagem atual
-                const getResponse = await fetch(`${SUPABASE_URL}/rest/v1/page_visits?page_id=eq.${pageId}&select=visit_count`, {
-                    headers: {
-                        'apikey': SUPABASE_KEY,
-                        'Authorization': `Bearer ${SUPABASE_KEY}`
-                    }
-                });
-                
-                if (getResponse.ok) {
-                    const data = await getResponse.json();
-                    if (data && data.length > 0) {
-                        counterEl.textContent = data[0].visit_count.toLocaleString('pt-BR');
-                    } else {
-                        counterEl.textContent = '1';
-                    }
-                } else {
-                    counterEl.textContent = '---';
-                }
-            } catch (error) {
-                console.log('Contador:', error);
-                counterEl.textContent = '---';
-            }
-        }
-
-        // Inicialização
+        // Contador de Acessos
         document.addEventListener('DOMContentLoaded', () => {
             createRoses();
             createPetals();
             createSparks();
-            updateVisitCounter();
+
+            const baseVisits = 15420;
+            let userVisits = localStorage.getItem('user_visits');
+            
+            if (!userVisits) {
+                userVisits = 1;
+            } else {
+                userVisits = parseInt(userVisits) + 1;
+            }
+
+            localStorage.setItem('user_visits', userVisits);
+            const totalDisplay = baseVisits + userVisits;
+            document.getElementById('counter-value').innerText = totalDisplay.toLocaleString('pt-BR');
         });
     </script>
 </body>
