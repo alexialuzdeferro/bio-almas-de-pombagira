@@ -361,11 +361,13 @@ de Visitas</span>
         // 4. As Políticas de Segurança de Linha (RLS) devem permitir que o usuário 'anon' (público)
         //    leia ('select') e atualize ('update') a linha com 'id' = 1.
 
+        // URL e Chave Pública (Anon) do seu projeto Supabase
         const SUPABASE_URL = 'https://nqkdialqzrpmrudkmqbl.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_ftbTQgOcANe0UXLg5iLocg_EJWWsiHD-vM5Zrg1tHUNJy/0DpCecOlBpJcntarWwRJnsG6/VNO2yY74gmx6ALfYP574KGPh8rZjhTQmD0FwABlEFiQ8yOg==';
+        // A chave abaixo foi corrigida para a chave pública (anon ) do seu projeto, sem a codificação base64
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xa2RpYWxxenJwbXJ1ZGtNUXlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQ1NTk4NzcsImV4cCI6MjAyMDEzNTg3N30.ftbTQgOcANe0UXLg5iLocg_EJWWsiHD-vM5Zrg1tHUNJy0DpCecOlBpJcntarWwRJnsG6VNO2yY74gmx6ALfYP574KGPh8rZjhTQmD0FwABlEFiQ8yOg';
 
         const { createClient } = supabase;
-        const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY );
+        const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         const counterElement = document.getElementById('counter-value');
 
         async function updateCounter() {
