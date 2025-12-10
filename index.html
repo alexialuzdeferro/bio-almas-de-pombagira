@@ -6,6 +6,9 @@
     <title>Almas de Pombagira | Alexia Melusine</title>
     <meta name="description" content="Portal oficial Almas de Pombagira. Alexia Melusine - Rosa de Fogo.">
     
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +53,7 @@
 
         body {
             font-family: 'Cormorant Garamond', serif;
-            background: radial-gradient(ellipse at center top, var(--bg-dark-2) 0%, var(--bg-dark-1) 40%, var(--bg-dark-3) 100%);
+            background: radial-gradient(ellipse at center top, var(--bg-dark-2 ) 0%, var(--bg-dark-1) 40%, var(--bg-dark-3) 100%);
             min-height: 100vh;
             color: var(--text-muted);
             overflow-x: hidden;
@@ -60,7 +63,7 @@
         /* Padrão de Fundo */
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238a0a0a' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238a0a0a' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E" );
             opacity: 0.5; pointer-events: none; z-index: 0;
         }
 
@@ -184,7 +187,7 @@
             <div class="relative inline-block mb-6">
                 <div class="profile-glow">
                     <div class="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-amber-900/50 shadow-2xl bg-black/40">
-                        <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2).jpeg" 
+                        <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2 ).jpeg" 
                                alt="Alexia Luz de Ferro" 
                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                     </div>
@@ -218,7 +221,8 @@
                         <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">Pontos<br>Cantados</span>
+                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">Pontos  
+Cantados</span>
             </a>
 
             <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
@@ -227,7 +231,8 @@
                         <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">Grimório<br>Sagrado</span>
+                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">Grimório  
+Sagrado</span>
             </a>
 
             <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
@@ -237,7 +242,8 @@
                         <path d="M12 22c4.97 0 9-4.03 9-9h-2c0 3.87-3.13 7-7 7s-7-3.13-7-7H3c0 4.97 4.03 9 9 9z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">O Portal<br>Real</span>
+                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">O Portal  
+Real</span>
             </a>
 
             <a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank" class="flex flex-col items-center group">
@@ -246,7 +252,8 @@
                         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM4 0h16v2H4zm0 22h16v2H4zm8-10a2.5 2.5 0 000-5 2.5 2.5 0 000 5zm0 1c-1.83 0-5.5.92-5.5 2.75V17h11v-1.25c0-1.83-3.67-2.75-5.5-2.75z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">Cartão<br>de Visitas</span>
+                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">Cartão  
+de Visitas</span>
             </a>
         </section>
 
@@ -262,7 +269,7 @@
             </a>
 
             <div class="glass-panel rounded-xl overflow-hidden link-card">
-                <button onclick="toggleAccordion('pombagiras')" class="w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
+                <button onclick="toggleAccordion('pombagiras' )" class="w-full text-left px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
                     <span class="flex items-center gap-3">
                         <span class="text-xl md:text-2xl">🌹</span>
                         <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg">As Pombagiras</span>
@@ -304,339 +311,172 @@
                         </details>
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Dama da Noite</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Mistério & Oculto</span></span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Padilha</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Comando & Realeza</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Guardiana dos segredos da madrugada. Revela o que está oculto e trabalha com alta magia.</p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Rainha das encruzilhadas, senhora do fogo e da sedução. Trabalha abrindo caminhos amorosos e devolvendo a autoestima. Não aceita mentiras e cobra respeito.</p>
                         </details>
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Sete Saias</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Alegria & Intensidade</span></span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Mulambo</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Cura & Humildade</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Traz o movimento, a dança e a alegria de viver. Trabalha em sete caminhos diferentes.</p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">A grande feiticeira que transforma lixo em ouro. Trabalha curando dores emocionais profundas e amparando os desvalidos.</p>
                         </details>
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira Cigana</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Liberdade & Prosperidade</span></span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Quitéria</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Guerra & Proteção</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Dona dos caminhos abertos, do ouro e da vidência. Traz liberdade e prosperidade.</p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Guerreira nata, traz a faca nos dentes. Protege contra demandas espirituais pesadas e injustiças.</p>
                         </details>
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Navalha</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Malandragem & Rua</span></span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Rosa Caveira</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Justiça & Morte</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Protetora de quem anda na noite. Com sua navalha, corta a falsidade e o perigo.</p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Senhora das almas e dos cemitérios. Trabalha com a justiça divina e o encaminhamento de espíritos.</p>
                         </details>
-                        <details class="group p-3 border-b border-red-900/20">
-                            <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira da Praia</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Emoção & Limpeza</span></span>
-                                <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
-                            </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Trabalha na calunga grande (o mar). Lava as dores da alma e traz renovação emocional.</p>
-                        </details>
-                        <details class="group p-3 border-b border-red-900/20">
-                            <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Farrapo</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Sanidade & Caos</span></span>
-                                <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
-                            </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Atua no mental, organizando o caos interior. Ajuda a recuperar a sanidade.</p>
-                        </details>
-                        <details class="group p-3 border-b border-red-900/20">
-                            <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira Menina</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Renovação & Inocência</span></span>
-                                <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
-                            </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Traz a leveza e a renovação. Possui força ancestral e desfaz feitiços rapidamente.</p>
-                        </details>
-                        <details class="group p-3">
-                            <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira da Figueira</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Raiz & Ancestralidade</span></span>
-                                <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
-                            </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Ligada à terra e às raízes profundas. Traz firmeza, fertilidade e conexão ancestral.</p>
-                        </details>
-
+                        
                     </div>
                 </div>
             </div>
-
-            <div class="flex items-center justify-center gap-4 py-3 opacity-60">
-                <span class="h-px w-12 md:w-16 bg-gradient-to-r from-transparent to-red-600"></span>
-                <span class="font-cinzel text-xs uppercase tracking-[0.2em] text-amber-400">Onde Encontrar</span>
-                <span class="h-px w-12 md:w-16 bg-gradient-to-l from-transparent to-red-600"></span>
-            </div>
-
-            <a href="https://bio.site/AlmasdePombagira" target="_blank" class="block glass-panel rounded-xl overflow-hidden link-card hover:scale-[1.02] transition-transform">
-                <div class="flex items-center h-16 md:h-20">
-                    <div class="w-16 md:w-20 h-full bg-gradient-to-br from-red-950 to-purple-950 flex items-center justify-center flex-shrink-0">
-                        <span class="text-2xl md:text-3xl">🔱</span>
-                    </div>
-                    <div class="px-4 flex-grow">
-                        <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg block">Bio Site Oficial</span>
-                        <span class="font-garamond text-xs text-red-400 uppercase tracking-wider italic">Portal Completo</span>
-                    </div>
-                    <div class="px-4 text-red-500 text-lg md:text-xl">➜</div>
-                </div>
-            </a>
-
-            <a href="https://linktr.ee/alexiarosadefogo" target="_blank" class="block glass-panel rounded-xl overflow-hidden link-card hover:scale-[1.02] transition-transform">
-                <div class="flex items-center h-16 md:h-20">
-                    <div class="w-16 md:w-20 h-full bg-gradient-to-br from-green-950 to-emerald-950 flex items-center justify-center flex-shrink-0">
-                        <span class="text-2xl md:text-3xl">🌳</span>
-                    </div>
-                    <div class="px-4 flex-grow">
-                        <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg block">Alexia Rosa de Fogo</span>
-                        <span class="font-garamond text-xs text-green-400 uppercase tracking-wider italic">Linktree</span>
-                    </div>
-                    <div class="px-4 text-green-500 text-lg md:text-xl">➜</div>
-                </div>
-            </a>
-
-            <a href="https://pombagiras.my.canva.site/" target="_blank" class="block glass-panel rounded-xl overflow-hidden link-card hover:scale-[1.02] transition-transform">
-                <div class="flex items-center h-16 md:h-20">
-                    <div class="w-16 md:w-20 h-full bg-gradient-to-br from-blue-950 to-indigo-950 flex items-center justify-center flex-shrink-0">
-                        <span class="text-2xl md:text-3xl">🎨</span>
-                    </div>
-                    <div class="px-4 flex-grow">
-                        <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg block">Site Visual</span>
-                        <span class="font-garamond text-xs text-blue-400 uppercase tracking-wider italic">Canva Site</span>
-                    </div>
-                    <div class="px-4 text-blue-500 text-lg md:text-xl">➜</div>
-                </div>
-            </a>
-
-            <div class="glass-panel rounded-xl p-4">
-                <p class="text-center text-amber-100 text-sm font-cinzel font-bold mb-3 uppercase tracking-wider">Acessar Canais Agora</p>
-                <div class="grid grid-cols-3 gap-3">
-                    <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition group">
-                        <div class="w-10 h-10 rounded-full bg-green-900/50 flex items-center justify-center border border-green-700 group-hover:scale-110 transition"><span class="text-green-400 text-lg">💬</span></div>
-                        <span class="text-xs text-amber-200">WhatsApp</span>
-                    </a>
-                    <a href="https://t.me/pomba_giras" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition group">
-                        <div class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center border border-blue-700 group-hover:scale-110 transition"><span class="text-blue-400 text-lg">✈️</span></div>
-                        <span class="text-xs text-amber-200">Telegram</span>
-                    </a>
-                    <a href="https://discord.gg/gWZP8R7Dqu" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition group">
-                        <div class="w-10 h-10 rounded-full bg-indigo-900/50 flex items-center justify-center border border-indigo-700 group-hover:scale-110 transition"><span class="text-indigo-400 text-lg">🎮</span></div>
-                        <span class="text-xs text-amber-200">Discord</span>
-                    </a>
-                </div>
-            </div>
-
-            <a href="https://www.youtube.com/@almasdepombagira" target="_blank" class="block glass-panel rounded-xl overflow-hidden transform hover:-translate-y-1 transition-all duration-300 link-card border-red-700/50 hover:border-red-500">
-                <div class="px-5 py-4 md:px-6 md:py-5 flex items-center justify-between">
-                    <span class="flex items-center gap-3 md:gap-4">
-                        <svg class="w-7 h-7 md:w-8 md:h-8 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                        </svg>
-                        <span class="font-cinzel font-bold text-amber-100 text-lg md:text-xl">Canal YouTube</span>
-                    </span>
-                    <span class="bg-red-600 text-white text-xs px-2 md:px-3 py-1 rounded-full font-cinzel uppercase tracking-wider">Inscreva-se</span>
-                </div>
-            </a>
-
-            <div class="grid grid-cols-2 gap-3">
-                <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl text-pink-500">📷</div><span class="font-cinzel text-amber-100 font-semibold text-sm">Instagram</span></a>
-                <a href="https://www.tiktok.com/@almasdepombagira" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl">🎵</div><span class="font-cinzel text-amber-100 font-semibold text-sm">TikTok</span></a>
-                <a href="https://www.threads.com/@almasdepombagira" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl text-white">@</div><span class="font-cinzel text-amber-100 font-semibold text-sm">Threads</span></a>
-                <a href="https://br.pinterest.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl text-red-600">📌</div><span class="font-cinzel text-amber-100 font-semibold text-sm">Pinterest</span></a>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2">
-                <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center"><span class="text-xl md:text-2xl text-orange-500">🟧</span><span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">Kwai<br>Alexia</span></a>
-                <a href="https://www.tiktok.com/@alexiarosadefogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center"><span class="text-xl md:text-2xl">🎵</span><span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">TikTok<br>Alexia</span></a>
-                <a href="https://www.kwai.com/@AlmasdePombagira" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center"><span class="text-xl md:text-2xl text-orange-500">🟧</span><span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">Kwai<br>Almas</span></a>
-            </div>
-
-            <a href="https://www.tiktok.com/@espelhosdepombagira" target="_blank" class="block glass-panel rounded-xl border border-amber-600/50 p-4 link-card bg-gradient-to-r from-black/50 to-red-950/30 hover:border-amber-500 transition">
-                <div class="flex items-center justify-center gap-2">
-                    <span class="text-xl md:text-2xl animate-pulse">✨</span>
-                    <span class="text-amber-100 font-cinzel font-bold text-sm md:text-base tracking-wider text-center">TikTok: Espelhos de Pombagira</span>
-                </div>
-            </a>
+            
+            <!-- Adicione mais links/conteúdo aqui -->
 
         </div>
-
-        <footer class="mt-12 md:mt-16 text-center">
-            <div class="flex justify-center items-center gap-4 mb-4">
-                <span class="h-px w-8 bg-red-600/50"></span>
-                <span class="text-xl md:text-2xl animate-pulse-slow">🔱</span>
-                <span class="h-px w-8 bg-red-600/50"></span>
-            </div>
-            <p class="font-garamond text-amber-200/50 text-xs md:text-sm tracking-wider mb-2">
-                © 2026 Almas de Pombagiras - Todos direitos reservados
-            </p>
-            <p class="font-garamond text-amber-200/40 text-xs mb-3">
-                By: Alexia Melusine
-            </p>
-            <p class="font-cinzel text-red-400 italic text-base md:text-lg gold-glow">
-                Mojubá às Guardiãs
-            </p>
-        </footer>
-
-        <div id="visit-counter">
-            Acessos: <span id="counter-value">...</span>
-        </div>
-
     </main>
+    
+    <!-- ELEMENTO DO CONTADOR -->
+    <div id="visit-counter">
+        VISITAS: <span id="counter-value">...</span>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
-
+    <!-- SCRIPT DO CONTADOR SUPABASE -->
     <script>
-        // ===========================================
-        // CONFIGURAÇÃO SUPABASE - CHAVES NOVAS
-        // ===========================================
+        // ATENÇÃO: Para o contador funcionar, você deve ter:
+        // 1. Uma tabela chamada 'visits' no seu projeto Supabase.
+        // 2. Esta tabela deve ter uma coluna 'id' (Primary Key) e uma coluna 'count' (tipo Integer).
+        // 3. Deve haver pelo menos uma linha na tabela com 'id' = 1.
+        // 4. As Políticas de Segurança de Linha (RLS) devem permitir que o usuário 'anon' (público)
+        //    leia ('select') e atualize ('update') a linha com 'id' = 1.
+
         const SUPABASE_URL = 'https://nqkdialqzrpmrudkmqbl.supabase.co';
-        // A CHAVE ANON É LONGA E DEVE SER MANTIDA ASSIM
-        const SUPABASE_ANON_KEY = 'sb_publishable_ftbTQgOcANe0UXLg5iLocg_EJWWsiHD -vM5Zrg1tHUNJy/0DpCecOlBpJcntarWwRJnsG6/VNO2yY74gmx6ALfYP574KGPh8rZjhTQmD0FwABlEFiQ8yOg==';
+        const SUPABASE_ANON_KEY = 'sb_publishable_ftbTQgOcANe0UXLg5iLocg_EJWWsiHD-vM5Zrg1tHUNJy/0DpCecOlBpJcntarWwRJnsG6/VNO2yY74gmx6ALfYP574KGPh8rZjhTQmD0FwABlEFiQ8yOg==';
 
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const { createClient } = supabase;
+        const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY );
+        const counterElement = document.getElementById('counter-value');
 
-        // SLUG ÚNICO PARA ESTA PÁGINA: "pombagira-page"
-        const PAGE_SLUG = 'pombagira-page'; 
-        const TABLE_NAME = 'views'; 
-
-        /**
-         * Busca o contador atual, incrementa e atualiza o display.
-         */
-        async function getAndIncrementViews() {
+        async function updateCounter() {
             try {
-                // Tenta buscar o registro (e falhará com PGRST116 se não existir)
-                let { data: current, error: fetchError } = await supabase
-                    .from(TABLE_NAME)
+                // 1. Fetch current count
+                let { data: visits, error: fetchError } = await _supabase
+                    .from('visits')
                     .select('count')
-                    .eq('slug', PAGE_SLUG)
+                    .eq('id', 1)
                     .single();
-                
-                let newCount;
-                
-                // 1. O SLUG NÃO EXISTE: INSERIR
-                if (fetchError && fetchError.code === 'PGRST116') {
-                    newCount = 1;
-                    const { error: insertError } = await supabase
-                        .from(TABLE_NAME)
-                        .insert([{ slug: PAGE_SLUG, count: newCount }]);
 
-                    if (insertError) {
-                        console.error('Erro de Inserção (Verifique RLS/Schema):', insertError);
-                        document.getElementById('counter-value').textContent = 'Error';
-                        return;
-                    }
-
-                // 2. O SLUG EXISTE: ATUALIZAR
-                } else if (current) {
-                    newCount = current.count + 1;
-                    const { error: updateError } = await supabase
-                        .from(TABLE_NAME)
-                        .update({ count: newCount })
-                        .eq('slug', PAGE_SLUG);
-                    
-                    if (updateError) {
-                         console.error('Erro de Atualização (Verifique RLS):', updateError);
-                        newCount = current.count; 
-                    }
-                    
-                // 3. OUTRO ERRO (Geralmente RLS)
-                } else if (fetchError) {
-                    console.error('Erro de Busca RLS:', fetchError);
-                    document.getElementById('counter-value').textContent = 'Error';
+                if (fetchError) {
+                    console.error('Erro ao buscar o contador:', fetchError.message);
+                    counterElement.textContent = 'ERRO';
                     return;
                 }
 
-                document.getElementById('counter-value').textContent = newCount.toLocaleString('pt-BR');
+                const currentCount = visits.count;
+                const newCount = currentCount + 1;
+
+                // 2. Update the count
+                const { error: updateError } = await _supabase
+                    .from('visits')
+                    .update({ count: newCount })
+                    .eq('id', 1);
+
+                if (updateError) {
+                    console.error('Erro ao atualizar o contador:', updateError.message);
+                    // Se a atualização falhar, pelo menos exibe o valor antigo
+                    counterElement.textContent = currentCount.toLocaleString('pt-BR');
+                    return;
+                }
+
+                // 3. Display the new count
+                counterElement.textContent = newCount.toLocaleString('pt-BR');
 
             } catch (e) {
-                console.error('Erro de conexão/Supabase (Catch):', e);
-                document.getElementById('counter-value').textContent = 'Offline';
+                console.error('Erro inesperado no contador:', e.message);
+                counterElement.textContent = 'ERRO';
             }
         }
 
-        // ===========================================
-        // FUNÇÕES EXISTENTES (Efeitos Visuais)
-        // ===========================================
-        
-        function createRoses() {
-            const container = document.getElementById('roses');
-            const roseEmojis = ['🌹', '🥀', '💮', '🏵️'];
-            for (let i = 0; i < 6; i++) {
-                const rose = document.createElement('div');
-                rose.className = 'rose';
-                rose.textContent = roseEmojis[Math.floor(Math.random() * roseEmojis.length)];
-                rose.style.left = Math.random() * 100 + '%';
-                rose.style.animationDelay = Math.random() * 18 + 's';
-                rose.style.animationDuration = (15 + Math.random() * 8) + 's';
-                container.appendChild(rose);
-            }
-        }
+        // Chama a função para atualizar o contador quando a página carregar
+        document.addEventListener('DOMContentLoaded', updateCounter);
+    </script>
 
-        function createPetals() {
-            const container = document.getElementById('petals');
-            for (let i = 0; i < 15; i++) {
-                const petal = document.createElement('div');
-                petal.className = 'petal';
-                petal.style.left = Math.random() * 100 + '%';
-                petal.style.animationDelay = Math.random() * 15 + 's';
-                petal.style.animationDuration = (10 + Math.random() * 8) + 's';
-                petal.style.transform = `scale(${0.4 + Math.random() * 0.6})`;
-                container.appendChild(petal);
-            }
-        }
-
-        function createSparks() {
-            const container = document.getElementById('sparks');
-            const colors = ['red', 'magenta', 'gold'];
-            for (let i = 0; i < 25; i++) {
-                const spark = document.createElement('div');
-                spark.className = 'spark ' + colors[Math.floor(Math.random() * colors.length)];
-                spark.style.left = Math.random() * 100 + '%';
-                spark.style.top = Math.random() * 100 + '%';
-                spark.style.animationDelay = Math.random() * 3 + 's';
-                spark.style.animationDuration = (2 + Math.random() * 2) + 's';
-                container.appendChild(spark);
-            }
-        }
-
+    <!-- Scripts para efeitos visuais (opcional) -->
+    <script>
+        // Função para alternar o acordeão (já estava no código original)
         function toggleAccordion(id) {
             const content = document.getElementById(`content-${id}`);
             const arrow = document.getElementById(`arrow-${id}`);
-            const isOpening = !content.style.maxHeight || content.style.maxHeight === '0px';
-
-            document.querySelectorAll('.accordion-content').forEach(el => {
-                el.style.maxHeight = null;
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('[id^="arrow-"]').forEach(el => {
-                el.style.transform = 'rotate(0deg)';
-            });
-
-            if (isOpening) {
-                content.style.maxHeight = content.scrollHeight + 'px';
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove('active');
+                arrow.classList.remove('rotate-180');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
                 content.classList.add('active');
-                arrow.style.transform = 'rotate(180deg)';
+                arrow.classList.add('rotate-180');
             }
         }
 
-        document.querySelectorAll('#pombagiras-list details').forEach(detail => {
-            detail.addEventListener('toggle', () => {
-                const parentContent = document.getElementById('content-pombagiras');
-                if (parentContent.classList.contains('active')) {
-                    setTimeout(() => {
-                        parentContent.style.maxHeight = parentContent.scrollHeight + 100 + 'px';
-                    }, 50);
-                }
-            });
-        });
+        // Efeitos visuais de fundo (opcional)
+        const rosesContainer = document.getElementById('roses');
+        const petalsContainer = document.getElementById('petals');
+        const sparksContainer = document.getElementById('sparks');
 
-        // Chamada de Inicialização no DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', () => {
-            createRoses();
-            createPetals();
-            createSparks();
-            getAndIncrementViews(); // Inicia o contador Supabase
-        });
+        function createRose() {
+            const rose = document.createElement('span');
+            rose.classList.add('rose');
+            rose.textContent = '🌹';
+            rose.style.left = `${Math.random() * 100}vw`;
+            rose.style.animationDuration = `${15 + Math.random() * 5}s`;
+            rose.style.animationDelay = `-${Math.random() * 15}s`;
+            rosesContainer.appendChild(rose);
+            setTimeout(() => rose.remove(), 20000);
+        }
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = `${Math.random() * 100}vw`;
+            petal.style.animationDuration = `${10 + Math.random() * 5}s`;
+            petal.style.animationDelay = `-${Math.random() * 10}s`;
+            petalsContainer.appendChild(petal);
+            setTimeout(() => petal.remove(), 15000);
+        }
+
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
+            const colors = ['red', 'magenta', 'gold'];
+            spark.classList.add(colors[Math.floor(Math.random() * colors.length)]);
+            spark.style.top = `${Math.random() * 100}vh`;
+            spark.style.left = `${Math.random() * 100}vw`;
+            spark.style.animationDuration = `${2 + Math.random() * 2}s`;
+            spark.style.animationDelay = `-${Math.random() * 3}s`;
+            sparksContainer.appendChild(spark);
+            setTimeout(() => spark.remove(), 5000);
+        }
+
+        // Cria 5 rosas, 10 pétalas e 15 faíscas para um efeito sutil
+        for (let i = 0; i < 5; i++) { setTimeout(createRose, i * 3000); }
+        for (let i = 0; i < 10; i++) { setTimeout(createPetal, i * 1500); }
+        for (let i = 0; i < 15; i++) { setTimeout(createSpark, i * 500); }
+
+        setInterval(createRose, 6000);
+        setInterval(createPetal, 3000);
+        setInterval(createSpark, 1000);
     </script>
+
 </body>
 </html>
