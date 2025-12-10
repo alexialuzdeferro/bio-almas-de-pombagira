@@ -391,6 +391,55 @@
             position: relative;
             z-index: 10;
         }
+
+        /* ============ CONTADOR SUPABASE (NOVO) ============ */
+        #visit-counter {
+            position: fixed;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.25);
+            color: rgba(253, 224, 71, 0.4);
+            font-size: 9px;
+            font-family: monospace;
+            padding: 4px 8px;
+            border-radius: 10px;
+            z-index: 9999;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            user-select: none;
+        }
+
+        #visit-counter:hover {
+            opacity: 0.8;
+            background: rgba(0, 0, 0, 0.4);
+            color: rgba(253, 224, 71, 0.7);
+        }
+
+        #counter-value {
+            color: rgba(253, 224, 71, 0.8);
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        .status-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(74, 222, 128, 0.3);
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
     </style>
 </head>
 <body>
@@ -493,7 +542,7 @@
             <a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank" class="flex flex-col items-center group">
                 <div class="w-14 h-14 md:w-18 md:h-18 rounded-full mystic-orb flex items-center justify-center mb-2 animate-float" style="animation-delay: 0.9s;">
                     <svg class="w-7 h-7 md:w-9 md:h-9 text-amber-300 drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM4 0h16v2H4zm0 22h16v2H4zm8-10a2.5 2.5 0 000-5 2.5 2.5 0 000 5zm0 1c-1.83 0-5.5.92-5.5 2.75V17h11v-1.25c0-1.83-3.67-2.75-5.5-2.75z"/>
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM4 0h16v2H4zm0 22h16v2H4zm8-10a2.5 2.5 0 000-5 2.5 2.5 0 000 5zm0 1c-1.83 0-5.5.92-5.5 2.75V17h11v-1.25c0-1.83-3.67-2.75-5.5-2.75z"/>
                     </svg>
                 </div>
                 <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
@@ -847,14 +896,110 @@
             </p>
         </footer>
 
-        <!-- Contador -->
-        <div id="visit-counter" class="fixed bottom-2 right-2 text-amber-500/60 text-[10px] font-mono z-50 pointer-events-none bg-black/50 px-2 py-1 rounded">
-            Acessos: <span id="counter-value">...</span>
+        <!-- CONTADOR SUPABASE (ATUALIZADO) -->
+        <div id="visit-counter" title="Total de visitantes">
+            <span style="opacity: 0.6;">👁</span>
+            <span id="counter-value">0</span>
+            <div class="status-dot"></div>
         </div>
 
     </main>
 
+    <!-- Script Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0/dist/umd/supabase.min.js"></script>
+    
     <script>
+        // ============ CONFIGURAÇÃO SUPABASE ============
+        const SUPABASE_URL = 'https://qgnprifuachmfxoaalax.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnbnByaWZ1YWNobWZ4b2FhbGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzODU5MDcsImV4cCI6MjA4MDk2MTkwN30.sKSYFhcI-zflr9RUKXpWF0_5sc6foDG7yxdEirtE0W4';
+        const SITE_NAME = 'almas_de_pombagira_portal';
+        
+        // ============ FUNÇÕES DO CONTADOR ============
+        async function initSupabaseCounter() {
+            try {
+                const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+                const counterEl = document.getElementById('counter-value');
+                
+                // Verificar se já contamos nesta sessão
+                if (!sessionStorage.getItem('site_visited_almas')) {
+                    // Nova visita - incrementar
+                    await incrementCounter(supabase, counterEl);
+                    sessionStorage.setItem('site_visited_almas', 'true');
+                } else {
+                    // Já visitou - apenas mostrar
+                    await showCounter(supabase, counterEl);
+                }
+                
+            } catch (error) {
+                console.log('🔧 Contador Supabase offline');
+                // Fallback silencioso
+                useLocalFallback();
+            }
+        }
+        
+        async function incrementCounter(supabase, counterEl) {
+            try {
+                // Buscar contador atual
+                const { data } = await supabase
+                    .from('page_views')
+                    .select('view_count')
+                    .eq('page_name', SITE_NAME)
+                    .single();
+                
+                const current = data?.view_count || 0;
+                const newCount = current + 1;
+                
+                // Atualizar no banco
+                await supabase
+                    .from('page_views')
+                    .upsert({
+                        page_name: SITE_NAME,
+                        view_count: newCount,
+                        last_updated: new Date().toISOString()
+                    }, {
+                        onConflict: 'page_name'
+                    });
+                
+                // Atualizar na tela
+                counterEl.textContent = newCount.toLocaleString('pt-BR');
+                
+                // Animação sutil
+                counterEl.style.transform = 'scale(1.2)';
+                setTimeout(() => counterEl.style.transform = 'scale(1)', 200);
+                
+            } catch (error) {
+                console.error('Erro ao incrementar:', error);
+                throw error;
+            }
+        }
+        
+        async function showCounter(supabase, counterEl) {
+            try {
+                const { data } = await supabase
+                    .from('page_views')
+                    .select('view_count')
+                    .eq('page_name', SITE_NAME)
+                    .single();
+                
+                if (data) {
+                    counterEl.textContent = data.view_count.toLocaleString('pt-BR');
+                }
+            } catch (error) {
+                console.error('Erro ao mostrar:', error);
+            }
+        }
+        
+        function useLocalFallback() {
+            let localCount = localStorage.getItem('local_almas_views') || 0;
+            localCount = parseInt(localCount) + 1;
+            localStorage.setItem('local_almas_views', localCount);
+            
+            const counterEl = document.getElementById('counter-value');
+            counterEl.textContent = localCount;
+            counterEl.style.opacity = '0.7';
+        }
+        
+        // ============ FUNÇÕES ORIGINAIS DO SITE ============
         // Criar Rosas Flutuantes
         function createRoses() {
             const container = document.getElementById('roses');
@@ -937,24 +1082,15 @@
             });
         });
 
-        // Contador de Acessos
+        // ============ INICIALIZAÇÃO ============
         document.addEventListener('DOMContentLoaded', () => {
+            // Efeitos visuais originais
             createRoses();
             createPetals();
             createSparks();
-
-            const baseVisits = 15420;
-            let userVisits = localStorage.getItem('user_visits');
             
-            if (!userVisits) {
-                userVisits = 1;
-            } else {
-                userVisits = parseInt(userVisits) + 1;
-            }
-
-            localStorage.setItem('user_visits', userVisits);
-            const totalDisplay = baseVisits + userVisits;
-            document.getElementById('counter-value').innerText = totalDisplay.toLocaleString('pt-BR');
+            // Iniciar contador Supabase
+            initSupabaseCounter();
         });
     </script>
 </body>
