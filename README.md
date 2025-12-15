@@ -24,7 +24,7 @@ O foco do projeto é **pesquisa, divulgação cultural e expressão artística**
 ## 🌐 Acesse o Portal
 
 👉 **Link oficial (GitHub Pages):**  
-https://alexialuzdeferro.github.io/almas-de-pombagira/
+https://alexialuzdeferro.github.io/pombagira/
 
 ---
 
